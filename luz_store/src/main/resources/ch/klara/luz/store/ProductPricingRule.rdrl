@@ -5,5 +5,7 @@ import java.lang.Number;
 rule "ProductPricingRule"
 	dialect "mvel"
 	when
+		$productPricing : ProductPricing( pricePlan == "MONTHLY" )
 	then
+		$productPricing.setPrice( 10.0B );
 end
