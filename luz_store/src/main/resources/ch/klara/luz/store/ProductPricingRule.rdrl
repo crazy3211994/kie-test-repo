@@ -1,0 +1,9 @@
+package ch.klara.luz.store;
+
+import java.lang.Number;
+
+rule "ProductPricingRule"
+	dialect "mvel"
+	when
+	then
+end
