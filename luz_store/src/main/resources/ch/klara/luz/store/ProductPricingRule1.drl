@@ -1,2 +1,19 @@
 package ch.klara.luz.store;
 
+import java.lang.Number;
+
+dialect "mvel"
+
+rule "Price plan monthly"
+	when
+		$productPricing : ProductPricing( pricePlan == "MONTHLY" )
+	then
+		$productPricing.setPrice( 10.0B );
+end
+
+rule "Price plan volume"
+    when
+        $productPricing: ProductPricing(pricePlan == "VOLUME", $volume : volume )
+    then
+        $productPricing.setPrice(5.0B * $volume)
+end
