@@ -8,7 +8,7 @@ rule "Price plan monthly"
 	when
 		$productPricing : ProductPricing( pricePlan == "MONTHLY" )
 	then
-		$productPricing.setPrice( 10.0B );
+		$productPricing.setPrice( 11.0B );
 end
 
 rule "Price plan volume"
